@@ -1,2 +1,2 @@
 # cursoUP
-Ambiente para poder acessar ao material e vídeo das aulas do curso.
+Ambiente para poder visualizar o material e acessar o link dos vídeos das aulas gravadas.
