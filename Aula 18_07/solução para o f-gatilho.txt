@@ -1,0 +1,20 @@
+
+
+var vnome = global.get("g_nome");
+var vmail = global.get("g_mail");
+var vfone1 = global.get("g_fone1");
+var vfone2 = global.get("g_fone2");
+var vobs = global.get("g_obs");
+var teste = "olá";
+
+msg = {};
+msg.payload = {};
+msg.payload.nome = vnome.payload.replace(/^[" ]*(.*?)[" ]*$/g, '$1');
+msg.payload.mail = vmail.payload.replace(/^[" ]*(.*?)[" ]*$/g, '$1');
+msg.payload.fone1 = vfone1.payload.replace(/^[" ]*(.*?)[" ]*$/g, '$1');
+msg.payload.fone2 = vfone2.payload.replace(/^[" ]*(.*?)[" ]*$/g, '$1');
+msg.payload.obs = vobs.payload.replace(/^[" ]*(.*?)[" ]*$/g, '$1');
+
+console.log(msg);
+
+return msg;

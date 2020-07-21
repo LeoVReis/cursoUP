@@ -1,0 +1,356 @@
+[
+    {
+        "id": "5c161705.0f24f8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a11c7975.200d48",
+        "type": "ui_text",
+        "z": "5c161705.0f24f8",
+        "group": "d4a468df.aaae18",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Nome",
+        "label": "Nome:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e3bdfbd7.21f4d8",
+        "type": "ui_text",
+        "z": "5c161705.0f24f8",
+        "group": "d4a468df.aaae18",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Mail",
+        "label": "E-mail",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "fc311f7c.369b8",
+        "type": "ui_text",
+        "z": "5c161705.0f24f8",
+        "group": "d4a468df.aaae18",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Fone1",
+        "label": "Fone1:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "4c560224.98cadc",
+        "type": "ui_text",
+        "z": "5c161705.0f24f8",
+        "group": "d4a468df.aaae18",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "Fone2",
+        "label": "Fone2:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "d30d2cc7.01c64",
+        "type": "ui_text",
+        "z": "5c161705.0f24f8",
+        "group": "d4a468df.aaae18",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "Observação",
+        "label": "Observação:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 450,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "13fb23f1.ac8dac",
+        "type": "firebase.on",
+        "z": "5c161705.0f24f8",
+        "name": "bd_nome",
+        "firebaseconfig": "",
+        "childpath": "projeto1/Nome",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 240,
+        "y": 220,
+        "wires": [
+            [
+                "a11c7975.200d48",
+                "18e83d3b.413693"
+            ]
+        ]
+    },
+    {
+        "id": "955e4bde.086cd8",
+        "type": "firebase.on",
+        "z": "5c161705.0f24f8",
+        "name": "bd_mail",
+        "firebaseconfig": "",
+        "childpath": "projeto1/Mail",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 230,
+        "y": 340,
+        "wires": [
+            [
+                "e3bdfbd7.21f4d8",
+                "c449a2e5.6b961"
+            ]
+        ]
+    },
+    {
+        "id": "3a399579.ff42aa",
+        "type": "firebase.on",
+        "z": "5c161705.0f24f8",
+        "name": "bd_obs",
+        "firebaseconfig": "",
+        "childpath": "projeto1/Observacao",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 230,
+        "y": 700,
+        "wires": [
+            [
+                "d30d2cc7.01c64",
+                "5501ecc.44de514"
+            ]
+        ]
+    },
+    {
+        "id": "eb7a8282.7e4e8",
+        "type": "firebase.on",
+        "z": "5c161705.0f24f8",
+        "name": "bd_fone2",
+        "firebaseconfig": "",
+        "childpath": "projeto1/Telefone2",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 240,
+        "y": 580,
+        "wires": [
+            [
+                "4c560224.98cadc",
+                "79d7e550.c88c3c"
+            ]
+        ]
+    },
+    {
+        "id": "9c92f8.227acd08",
+        "type": "firebase.on",
+        "z": "5c161705.0f24f8",
+        "name": "bd_fone1",
+        "firebaseconfig": "",
+        "childpath": "projeto1/Telefone1",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 240,
+        "y": 460,
+        "wires": [
+            [
+                "fc311f7c.369b8",
+                "c8d4637d.d3e5b"
+            ]
+        ]
+    },
+    {
+        "id": "18e83d3b.413693",
+        "type": "function",
+        "z": "5c161705.0f24f8",
+        "name": "f_nome",
+        "func": "var g_nome;\nglobal.set(\"g_nome\", msg);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 440,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c449a2e5.6b961",
+        "type": "function",
+        "z": "5c161705.0f24f8",
+        "name": "f_mail",
+        "func": "var g_mail;\nglobal.set(\"g_mail\", msg);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 430,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8d4637d.d3e5b",
+        "type": "function",
+        "z": "5c161705.0f24f8",
+        "name": "f_fone1",
+        "func": "var g_fone1;\nglobal.set(\"g_fone1\", msg);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 440,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79d7e550.c88c3c",
+        "type": "function",
+        "z": "5c161705.0f24f8",
+        "name": "f_fone2",
+        "func": "var g_fone2;\nglobal.set(\"g_fone2\", msg);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 440,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5501ecc.44de514",
+        "type": "function",
+        "z": "5c161705.0f24f8",
+        "name": "f_obs",
+        "func": "var g_obs;\nglobal.set(\"g_obs\", msg);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 440,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "98dfe994.f82618",
+        "type": "function",
+        "z": "5c161705.0f24f8",
+        "name": "f_gatilho",
+        "func": "var vnome = global.get(\"g_nome\");\nvar vmail = global.get(\"g_mail\");\nvar vfone1 = global.get(\"g_fone1\");\nvar vfone2 = global.get(\"g_fone2\");\nvar vobs = global.get(\"g_obs\");\nvar teste = \"olá\";\n\nmsg = {};\nmsg.payload = {};\nmsg.payload.nome = vnome.payload.replace(/^[\" ]*(.*?)[\" ]*$/g, '$1');\nmsg.payload.mail = vmail.payload.replace(/^[\" ]*(.*?)[\" ]*$/g, '$1');\nmsg.payload.fone1 = vfone1.payload.replace(/^[\" ]*(.*?)[\" ]*$/g, '$1');\nmsg.payload.fone2 = vfone2.payload.replace(/^[\" ]*(.*?)[\" ]*$/g, '$1');\nmsg.payload.obs = vobs.payload.replace(/^[\" ]*(.*?)[\" ]*$/g, '$1');\n\nconsole.log(msg);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 820,
+        "y": 420,
+        "wires": [
+            [
+                "8600aa3c.331ac8",
+                "13f62f80.d67181"
+            ]
+        ]
+    },
+    {
+        "id": "a97949fd.d918b8",
+        "type": "firebase.on",
+        "z": "5c161705.0f24f8",
+        "name": "gatilho",
+        "firebaseconfig": "",
+        "childpath": "projeto1/Observacao",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 630,
+        "y": 420,
+        "wires": [
+            [
+                "98dfe994.f82618"
+            ]
+        ]
+    },
+    {
+        "id": "8600aa3c.331ac8",
+        "type": "http request",
+        "z": "5c161705.0f24f8",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSfGfgCOs1bjfii6XKFPl6iBqpkVcd5gh8lK3FXHRhB_NCBLOw/formResponse?usp=pp_url&entry.626527923={{payload.nome}}&entry.817379702={{payload.mail}}&entry.125162229={{payload.fone1}}&entry.1575919831={{payload.fone2}}&entry.1041548005={{payload.obs}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1030,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "13f62f80.d67181",
+        "type": "debug",
+        "z": "5c161705.0f24f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d4a468df.aaae18",
+        "type": "ui_group",
+        "z": "",
+        "name": "Principal",
+        "tab": "9adcee9.8babc1",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9adcee9.8babc1",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Página",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
